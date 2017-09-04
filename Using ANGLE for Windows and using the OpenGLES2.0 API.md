@@ -1,7 +1,9 @@
 
-![Using ANGLE for Windows and using the OpenGLES2.0 API](http://gpupowered.org/node/29/)
+[微软的angle工程，有sln工程文件](https://github.com/Microsoft/angle)
 
-- # ԭ��
+[Using ANGLE for Windows and using the OpenGLES2.0 API](http://gpupowered.org/node/29/)
+
+- # 原文
 
 ```
 Using ANGLE for Windows and using the OpenGLES2.0 API
@@ -71,49 +73,49 @@ https://docs.google.com/presentation/d/1vN_KTFDaKjFlIgx1vM3ZFA4Rkf723onAAhIfKR7k
 -Prabindh Sundareson, 2015
 ```
 
-- # ����
+- # 翻译
 
 ```
-����
-ANGLE (Almost Native Graphics Layer Engine)��һ������������Windowsƽ̨�ϣ��ṩ��һ��Khronos��֤��OpenGLES2.0ʵ�֡�����һ���˽�3Dͼ��API������ڲ������ĺù��ߡ�Qt5�ڲ�Ҳʹ��ANGLE�������ڣ��ܹ�����������ƽ̨������OpenGLES2.0������ܣ�����Windowsƽ̨��������qt5.2 Qt5.1�汾������һ����
+介绍
+ANGLE (Almost Native Graphics Layer Engine)是一个软件包，在Windows平台上，提供了一个Khronos认证的OpenGLES2.0实现。这是一个了解3D图形API如何在内部工作的好工具。Qt5内部也使用ANGLE创建窗口，能够运行在所有平台上运行OpenGLES2.0场景框架，包括Windows平台，在所有qt5.2 Qt5.1版本，并进一步。
 
-ע�⣺ʹ������ϲ���Ĺ��ߣ�����ʹ��EGL������Windowsƽ̨����OpenGLES2.0�������������- http://gpupowered.org/node/33
-��
-ע�⣺������Ϊ��˵��Google�ִ���ANGLE����Դ�����ʹ�úͱ��룬��NuGet�����΢��Ϊwindows10 /�ֻ�ƽ̨�ṩ�����Լ���Դ���벹������ANGLE��Ŀ��������ע�⣬�÷�����Ҫ���µ�Visual Studio���ߣ�Visual Studio 2015����
+注意：使用您最喜爱的工具，快速使用EGL并且在Windows平台开发OpenGLES2.0程序，请参阅文章- http://gpupowered.org/node/33
+。
+注意：本文是为了说明Google仓储中ANGLE工程源代码的使用和编译，用NuGet打包，微软为windows10 /手机平台提供了它自己的源代码补丁编译ANGLE项目。但是请注意，该方法需要最新的Visual Studio工具（Visual Studio 2015）。
 
-��Ҫ
+需要
 
-΢����û���ṩһ�����ص�OpenGLES2.0 APIʵ�֡���WindowsĬ������¿��õ�OpenGL�汾�Ѿ���ʱ����ˣ�Ϊ������������̡�Ӧ�ó���͸��������ṩ�̵����󣬴������ܹ����ƶ�ƽ̨��Windows��������ͬ���ݵ�ANGLE��Ȼ������2013�ϼ��ȣ�΢���������Լ���WebGL����IE11�������Windows�ڲ�����һ��OpenGLES2.0������ʵ�֣�WebGL�ǳ�����OpenGLES2.0����΢��������ṩ���Լ���ʵ�ּ���ƽ̨�����д��۲졣
-ANGLE����OpenGL ES2.0 API��������Ⱦ����˲���Mesa�����൱��ģ���ʹ��Windows�ײ��DirectX API��ʹ��OpenGLES2.0����ˣ�
-ANGLE���Ա�������һ��API���������������Windows�ϵı���ͼ��Ӳ����API�ϡ�  
+微软并没有提供一个本地的OpenGLES2.0 API实现。在Windows默认情况下可用的OpenGL版本已经过时。因此，为满足浏览器厂商、应用程序和各种内容提供商的需求，创建了能够在移动平台和Windows上运行相同内容的ANGLE。然而，由2013上季度，微软发布了自己的WebGL运行IE11，这表明Windows内部存在一个OpenGLES2.0的类似实现（WebGL非常类似OpenGLES2.0）。微软将如何提供其自己的实现及其平台，还有待观察。
+ANGLE不是OpenGL ES2.0 API纯软件渲染，因此不像Mesa，是相当快的，它使用Windows底层的DirectX API，使用OpenGLES2.0。因此，
+ANGLE可以被看作是一个API翻译程序，它运行在Windows上的本地图形硬加速API上。  
 
-��ȡ����
+获取代码
 
-Ҫ��ô��룬����ʹ��Git��������ʾ��ע�⣬ANGLE��Chromium��Ŀ��һ���֣�2014����
+要获得代码，可以使用Git，如下所示。注意，ANGLE是Chromium项目的一部分（2014）。
 git clone https://chromium.googlesource.com/angle/angle
 
 
-������֯
+代码组织
 
-ANGLE����C++д�ģ�����Ҫ��4������Ŀ�������г���Щ��
+ANGLE是用C++写的，有主要有4个子项目。下面列出这些：
 
 libEGL
 libGLESv2
 preprocessor
 
-translator the libEGL.lib����libGLESv2.lib������ÿһ��Ӧ�ó��򣬾�����ͨ��OpenGLES2������preprocessor and translator library outputs����libGLESv2.lib������һ���֣�������Shader������롣
+translator the libEGL.lib，和libGLESv2.lib链接在每一个应用程序，就像普通的OpenGLES2建立。preprocessor and translator library outputs，是libGLESv2.lib本身的一部分，和用于Shader代码编译。
 
 Build
-��Windowsƽ̨���ṩ��2�����������SLN���ļ�����Щ��
+在Windows平台上提供了2个解决方案（SLN）文件。这些是
 
 angle/src/ANGLE.sln
 angle/samples/samples.sln
-��Щ��Ҫ��������ͬ��˳���ϡ���ʹ��Visual Studio 2012�����������ʱ����Ҫ������������裺
+这些需要建立在相同的顺序上。在使用Visual Studio 2012进行桌面操作时，需要下面的其他步骤：
 
-�������̵� "Include Directories" ���������·������under C/C++ properties����ͬʱ�ֱ�����libGLESv2.rc �ļ���ע�⣬�ⲻ��һ��C / C++�ļ���
+两个工程的 "Include Directories" 添加下面的路径，（under C/C++ properties），同时分别添加libGLESv2.rc 文件（注意，这不是一个C / C++文件）
 C:\Program Files (x86)\Windows Kits\8.0\Include\um;
 C:\Program Files (x86)\Windows Kits\8.0\Include\shared 
 
-Build��־
+Build日志
 
 ```
