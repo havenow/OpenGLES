@@ -79,18 +79,11 @@ https://docs.google.com/presentation/d/1vN_KTFDaKjFlIgx1vM3ZFA4Rkf723onAAhIfKR7k
 介绍
 ANGLE (Almost Native Graphics Layer Engine)是一个软件包，在Windows平台上，提供了一个Khronos认证的OpenGLES2.0实现。这是一个了解3D图形API如何在内部工作的好工具。Qt5内部也使用ANGLE创建窗口，能够运行在所有平台上运行OpenGLES2.0场景框架，包括Windows平台，在所有qt5.2 Qt5.1版本，并进一步。
 
-注意：使用您最喜爱的工具，快速使用EGL并且在Windows平台开发OpenGLES2.0程序，请参阅文章- http://gpupowered.org/node/33
-。
-注意：本文是为了说明Google仓储中ANGLE工程源代码的使用和编译，用NuGet打包，微软为windows10 /手机平台提供了它自己的源代码补丁编译ANGLE项目。但是请注意，该方法需要最新的Visual Studio工具（Visual Studio 2015）。
-
-需要
-
-微软并没有提供一个本地的OpenGLES2.0 API实现。在Windows默认情况下可用的OpenGL版本已经过时。因此，为满足浏览器厂商、应用程序和各种内容提供商的需求，创建了能够在移动平台和Windows上运行相同内容的ANGLE。然而，由2013上季度，微软发布了自己的WebGL运行IE11，这表明Windows内部存在一个OpenGLES2.0的类似实现（WebGL非常类似OpenGLES2.0）。微软将如何提供其自己的实现及其平台，还有待观察。
-ANGLE不是OpenGL ES2.0 API纯软件渲染，因此不像Mesa，是相当快的，它使用Windows底层的DirectX API，使用OpenGLES2.0。因此，
-ANGLE可以被看作是一个API翻译程序，它运行在Windows上的本地图形硬加速API上。  
+注意：使用您最喜爱的工具，快速使用EGL并且在Windows平台开发OpenGLES2.0程序，请参阅文章- http://gpupowered.org/node/33。
+注意：本文是为了说明Google仓储中ANGLE工程源代码的使用和编译，用NuGet打包，微软为windows10 /手机平台提供了它自己的源代码补丁编译ANGLE项目。但是请注意，该方法需要最新的Visual Studio工具（Visual Studio 2015）。需要微软并没有提供一个本地的OpenGLES2.0 API实现。在Windows默认情况下可用的OpenGL版本已经过时。因此，为满足浏览器厂商、应用程序和各种内容提供商的需求，创建了能够在移动平台和Windows上运行相同内容的ANGLE。然而，由2013上季度，微软发布了自己的WebGL运行IE11，这表明Windows内部存在一个OpenGLES2.0的类似实现（WebGL非常类似OpenGLES2.0）。微软将如何提供其自己的实现及其平台，还有待观察。
+ANGLE不是OpenGL ES2.0 API纯软件渲染，因此不像Mesa，是相当快的，它使用Windows底层的DirectX API，使用OpenGLES2.0。因此，ANGLE可以被看作是一个API翻译程序，它运行在Windows上的本地图形硬加速API上。  
 
 获取代码
-
 要获得代码，可以使用Git，如下所示。注意，ANGLE是Chromium项目的一部分（2014）。
 git clone https://chromium.googlesource.com/angle/angle
 
@@ -98,11 +91,9 @@ git clone https://chromium.googlesource.com/angle/angle
 代码组织
 
 ANGLE是用C++写的，有主要有4个子项目。下面列出这些：
-
 libEGL
 libGLESv2
 preprocessor
-
 translator the libEGL.lib，和libGLESv2.lib链接在每一个应用程序，就像普通的OpenGLES2建立。preprocessor and translator library outputs，是libGLESv2.lib本身的一部分，和用于Shader代码编译。
 
 Build
