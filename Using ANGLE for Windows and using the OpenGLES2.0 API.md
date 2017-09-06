@@ -87,9 +87,7 @@ ANGLE不是OpenGL ES2.0 API纯软件渲染，因此不像Mesa，是相当快的�
 要获得代码，可以使用Git，如下所示。注意，ANGLE是Chromium项目的一部分（2014）。
 git clone https://chromium.googlesource.com/angle/angle
 
-
 代码组织
-
 ANGLE是用C++写的，有主要有4个子项目。下面列出这些：
 libEGL
 libGLESv2
@@ -98,12 +96,12 @@ translator the libEGL.lib，和libGLESv2.lib链接在每一个应用程序，就
 
 Build
 在Windows平台上提供了2个解决方案（SLN）文件。这些是
-
 angle/src/ANGLE.sln
 angle/samples/samples.sln
 这些需要建立在相同的顺序上。在使用Visual Studio 2012进行桌面操作时，需要下面的其他步骤：
 
-两个工程的 "Include Directories" 添加下面的路径，（under C/C++ properties），同时分别添加libGLESv2.rc 文件（注意，这不是一个C / C++文件）
+两个工程的 "Include Directories" 添加下面的路径，（under C/C++ properties），同时分别添加libGLESv2.rc 文件
+（注意，这不是一个C / C++文件）
 C:\Program Files (x86)\Windows Kits\8.0\Include\um;
 C:\Program Files (x86)\Windows Kits\8.0\Include\shared 
 
