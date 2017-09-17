@@ -19,6 +19,6 @@ typedef void	(GL_APIENTRY* fun_glUseProgram) (GLuint program);
 		function(program);
 	}
   
-//4、调用  
-  调用 call_glUseProgram()函数即可
+//4、调用封装的函数  
+  调用 call_glUseProgram()函数即可
 ```
