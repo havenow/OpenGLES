@@ -89,16 +89,26 @@
 	}
 ```
 
+- # eglGetDisplay函数
 ```
 A display can be obtained by calling
 EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);
 
 The type and format of display_id are implementation-specific, 
 and it describes a specific display provided by the system EGL is running on. 
-For example, an EGL implementation under X windows could define display id to be an X Display,
-while an implementation under Microsoft Windows could define display id to be a Windows Device Context. 
+For example, an EGL implementation under X windows could define display_id to be an X Display,
+while an implementation under Microsoft Windows could define display_id to be a Windows Device Context. 
 If display id is EGL_DEFAULT_DISPLAY , a default display is returned. 
 Multiple calls made to eglGetDisplay with the same display_id will all return the same EGLDisplay handle.
 
-If no display matching display id is available, EGL_NO_DISPLAY is returned; no error condition is raised in this case.
+If no display matching display_id is available, EGL_NO_DISPLAY is returned; no error condition is raised in this case.
+
+调用函数EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);可以获取一个display;
+
+display_id的类型和格式取决于具体实现，描述了EGL系统提上运行的特定display。
+比如，X windows的EGL实现定义display_id是一个X Display，微软的Windows实现定义display_id是一个Windows设备上下文。
+如果display是EGL_DEFAULT_DISPLAY，会返回一个默认的dispaly.
+使用相同的display_id多次调用eglGetDisplay将会返回相同的EGLDisplay句柄。
+
+如果没有匹配display_id的display，将返回EGL_NO_DISPLAY；这种情况下不会报错。
 ```
