@@ -88,3 +88,17 @@
 		_surface    =   EGL_NO_SURFACE;
 	}
 ```
+
+```
+A display can be obtained by calling
+EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);
+
+The type and format of display_id are implementation-specific, 
+and it describes a specific display provided by the system EGL is running on. 
+For example, an EGL implementation under X windows could define display id to be an X Display,
+while an implementation under Microsoft Windows could define display id to be a Windows Device Context. 
+If display id is EGL_DEFAULT_DISPLAY , a default display is returned. 
+Multiple calls made to eglGetDisplay with the same display_id will all return the same EGLDisplay handle.
+
+If no display matching display id is available, EGL_NO_DISPLAY is returned; no error condition is raised in this case.
+```
