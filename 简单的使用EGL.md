@@ -112,3 +112,23 @@ display_id的类型和格式取决于具体实现，描述了EGL系统提上运�
 
 如果没有匹配display_id的display，将返回EGL_NO_DISPLAY；这种情况下不会报错。
 ```
+
+- # eglInitialize函数
+```
+EGL may be initialized on a display by calling
+EGLBoolean eglInitialize(EGLDisplay dpy, EGLint * major, EGLint * minor);
+
+EGL_TRUE is returned on success, and major and minor are updated with the major and minor version numbers of 
+the EGL implementation (for example, in an EGL 1.2 implementation, the values of *major and *minor would be 1 and 2, 
+respectively). major and minor are not updated if they are specified as NULL.
+
+EGL_FALSE is returned on failure and major and minor are not updated. 
+An EGL_BAD_DISPLAY error is generated if the dpy argument does not refer to a valid EGLDisplay. 
+An EGL_NOT_INITIALIZED error is generated if EGL cannot be initialized for an otherwise valid dpy.
+
+Initializing an already-initialized display is allowed, but the only effect of such
+a call is to return EGL_TRUE and update the EGL version numbers. An initialized
+display may be used from other threads in the same address space without being
+initialized again in those threads.
+
+```
