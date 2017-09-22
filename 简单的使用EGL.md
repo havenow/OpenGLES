@@ -131,4 +131,15 @@ a call is to return EGL_TRUE and update the EGL version numbers. An initialized
 display may be used from other threads in the same address space without being
 initialized again in those threads.
 
+EGL可能调用EGLBoolean eglInitialize(EGLDisplay dpy, EGLint * major, EGLint * minor)初始化一个display;
+
+成功返回EGL_TRUE，同时更新EGL实现的major和minor版本号（比如，EGL 1.2的实现，major和minor将会是 1 和 2），
+如果他们被指定为NULL，major和minor将不会更新。
+
+失败返回EGL_FALSE，同时major和minor将不会被更新。如果参数dpy是一个无效的EGLDisplay，将产生EGL_BAD_DISPLAY错误。
+如果EGL不能初始化一个有效的dpy，将会产生EGL_NOT_INITIALIZED错误。
+
+允许初始化一个已经初始化过的displa，但是效果只是返回EGL_TRUE，同时更新EGL版本号。一个初始化过的display可用于
+其他线程，在相同的地址空间空间中不用被再次初始化。
+
 ```
