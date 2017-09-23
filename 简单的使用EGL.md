@@ -1,6 +1,6 @@
 
 ```c++
-  // for gles2.0
+  	// for gles2.0
 	EGLConfig   _config;
 	EGLSurface  _surface;
 	EGLContext  _context;
@@ -15,7 +15,7 @@
   
   
   
-    /**
+   	 /**
 	*   初始化 OpenGLES2.0
 	*/
 	bool    initOpenGLES20()
