@@ -143,3 +143,28 @@ EGL可能调用EGLBoolean eglInitialize(EGLDisplay dpy, EGLint * major, EGLint *
 其他线程，在相同的地址空间空间中不用被再次初始化。
 
 ```
+
+- # eglChooseConfig函数   
+
+```
+An EGLConfig describes the format, type and size of the color buffers and ancillary buffers for an EGLSurface. 
+If the EGLSurface is a window, then the EGLConfig describing it may have an associated native visual type.
+
+Names of EGLConfig attributes are shown in Table 3.1. These names may be passed to eglChooseConfig to 
+specify required attribute properties. 
+
+EGL_CONFIG_ID is a unique integer identifying different EGLConfigs. 
+Configuration IDs must be small positive integers starting at 1 and ID assignment
+should be compact; that is, if there are N EGLConfigs defined by the EGL implementation, 
+their configuration IDs should be in the range [1,N]. Small gaps in the sequence are allowed, 
+but should only occur when removing configurations defined in previous revisions of an EGL implementation.
+
+EGLConfig描述了EGLSurface的color buffers和辅助 buffers的格式、类型和大小。如果EGLSurface是一个window，
+EGLConfig描述可能有一个关联的本地虚拟类型。
+
+EGLConfig属性的名称如表3.1，这些名称可能传给eglChooseConfig去指定需要的属性。
+
+EGL_CONFIG_ID是一个唯一的整数标识用来区分不同的EGLConfigs。Configuration IDs必须是一个从1开始的小正数，
+ID分配应该紧凑；如果EGL的实现有N个EGLConfigs，configuration IDs应该在[1,N]之间。系列中小的间隙是允许的，
+但是应该只在删除之前的配置定义时发生。
+```
