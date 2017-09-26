@@ -159,6 +159,16 @@ should be compact; that is, if there are N EGLConfigs defined by the EGL impleme
 their configuration IDs should be in the range [1,N]. Small gaps in the sequence are allowed, 
 but should only occur when removing configurations defined in previous revisions of an EGL implementation.
 
+Buffer Descriptions and Attributes
+The various buffers that may be contained by an EGLSurface, and the EGLConfig attributes controlling their creation, 
+are described below. Attribute values include the depth of these buffers, expressed in bits/pixel component. 
+If the depth of a buffer in an EGLConfig is zero, then an EGLSurface created with respect to that EGLConfig will 
+not contain the corresponding buffer.
+
+Not all buffers are used or required by all client APIs . To conserve resources, implementations may delay creation 
+of buffers until they are needed by EGL or a client API . For example, if an EGLConfig describes an alpha mask buffer with
+depth greater than zero, that buffer need not be allocated by a surface until an OpenVG context is bound to that surface.
+
 EGLConfig描述了EGLSurface的color buffers和辅助 buffers的格式、类型和大小。如果EGLSurface是一个window，
 EGLConfig描述可能有一个关联的本地虚拟类型。
 
