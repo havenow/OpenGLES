@@ -169,6 +169,24 @@ Not all buffers are used or required by all client APIs . To conserve resources,
 of buffers until they are needed by EGL or a client API . For example, if an EGLConfig describes an alpha mask buffer with
 depth greater than zero, that buffer need not be allocated by a surface until an OpenVG context is bound to that surface.
 
+The Color Buffer
+The color buffer contains pixel color values, and is shared by all client APIs rendering to a surface.
+
+EGL_COLOR_BUFFER_TYPE indicates the color buffer type, and must be either EGL_RGB_BUFFER for an RGB color buffer, 
+or EGL_LUMINANCE_BUFFER for a luminance color buffer. For an RGB buffer, EGL_RED_SIZE , EGL_GREEN_SIZE ,
+EGL_BLUE_SIZE must be non-zero, and EGL_LUMINANCE_SIZE must be zero. For a luminance buffer, EGL_RED_SIZE , EGL_GREEN_SIZE , EGL_BLUE_SIZE must be zero, and EGL_LUMINANCE_SIZE must be non-zero. For both RGB and luminance color buffers, 
+EGL_ALPHA_SIZE may be zero or non-zero (the latter indicates the existence of a destination alpha buffer).
+
+If OpenGL or OpenGL ES rendering is supported for a luminance color buffer(as described by the value of the 
+EGL_RENDERABLE_TYPE attribute, described below), it is treated as RGB rendering with the value of GL_RED_BITS 
+equal to EGL_LUMINANCE_SIZE and the values of GL_GREEN_BITS and GL_BLUE_BITS equal to zero. 
+The red component of fragments is written to the luminance channel of the color buffer, the green and blue 
+components are discarded, and the alpha component is written to the alpha channel of the color buffer (if present).
+
+EGL_BUFFER_SIZE gives the total of the color component bits of the color buffer 4 For an RGB color buffer, the total is 
+the sum of EGL_RED_SIZE , EGL_GREEN_SIZE , EGL_BLUE_SIZE , and EGL_ALPHA_SIZE . For a luminance color
+buffer, the total is the sum of EGL_LUMINANCE_SIZE and EGL_ALPHA_SIZE. 
+
 EGLConfig描述了EGLSurface的color buffers和辅助 buffers的格式、类型和大小。如果EGLSurface是一个window，
 EGLConfig描述可能有一个关联的本地虚拟类型。
 
