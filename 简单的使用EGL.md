@@ -196,3 +196,15 @@ EGL_CONFIG_ID是一个唯一的整数标识用来区分不同的EGLConfigs。Con
 ID分配应该紧凑；如果EGL的实现有N个EGLConfigs，configuration IDs应该在[1,N]之间。系列中小的间隙是允许的，
 但是应该只在删除之前的配置定义时发生。
 ```
+- # eglGetConfigAttrib函数
+```
+To get the value of an EGLConfig attribute, use
+EGLBoolean eglGetConfigAttrib(EGLDisplay dpy, EGLConfig config, EGLint attribute, EGLint* value);
+If eglGetConfigAttrib succeeds then it returns EGL_TRUE and the value for the specified attribute is returned in value. 
+Otherwise it returns EGL_FALSE . If attribute is not a valid attribute then EGL_BAD_ATTRIBUTE is generated.
+attribute may be any of the EGL attributes listed in tables 3.1 and 3.4, with the exception of EGL_MATCH_NATIVE_PIXMAP.
+
+调用eglGetConfigAttrib函数获取EGLConfig属性的值；
+如果eglGetConfigAttrib调用成功，返回EGL_TRUE和特地属性的值，否则返回EGL_FALSE。如果是无效的属性则会产生EGL_BAD_ATTRIBUTE。
+属性可以是EGL属性表3.1和3.4中的任何项，除了EGL_MATCH_NATIVE_PIXMAP以外。
+```
