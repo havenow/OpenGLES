@@ -223,4 +223,13 @@ EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWin
 eglCreateWindowSurface creates an onscreen EGLSurface and returns a handle to it. Any EGL context created with a 
 compatible EGLConfig can be used to render into this surface.
 
+创建一个on-screen 渲染surface，首先创建一个本地window，windows的像素格式符合config相应格式、类型和大小的color buffers。有些实现，
+本地window的像素格式必须和EGLConfig匹配。其他的实现可能是不同的格式也允许window和config对应。
+
+使用不同平台的EGLNativeWindowType，EGLNativeWindowType是本地window的句柄，调用
+EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list)函数。
+
+eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurface。任何EGL上下文被创建时带有一个合适的EGLConfig，可以用来
+在渲染到surface。
+
 ```
