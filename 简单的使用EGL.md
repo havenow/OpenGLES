@@ -208,3 +208,19 @@ attribute may be any of the EGL attributes listed in tables 3.1 and 3.4, with th
 如果eglGetConfigAttrib调用成功，返回EGL_TRUE和特地属性的值，否则返回EGL_FALSE。如果是无效的属性则会产生EGL_BAD_ATTRIBUTE。
 属性可以是EGL属性表3.1和3.4中的任何项，除了EGL_MATCH_NATIVE_PIXMAP以外。
 ```
+
+- # eglCreateWindowSurface函数
+
+```
+To create an on-screen rendering surface, first create a native platform window whose pixel format corresponds to the 
+format, type, and size of the color buffers required by config. On some implementations, the pixel format of the 
+native window must match that of the EGLConfig. Other implementations may allow any win and config to correspond, 
+even if their formats differ. 
+
+Using the platform-specific type EGLNativeWindowType, which is the type of a handle to that native window, then call:
+EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list);
+
+eglCreateWindowSurface creates an onscreen EGLSurface and returns a handle to it. Any EGL context created with a 
+compatible EGLConfig can be used to render into this surface.
+
+```
