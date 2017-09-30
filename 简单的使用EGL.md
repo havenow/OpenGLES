@@ -233,3 +233,8 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 在渲染到surface。
 
 ```
+
+- # eglCreateContext函数
+```
+
+```
