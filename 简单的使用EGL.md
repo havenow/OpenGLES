@@ -244,3 +244,8 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 ```
 
 ```
+
+- # eglQuerySurface函数
+```
+
+```
