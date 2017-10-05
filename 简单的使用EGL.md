@@ -1,4 +1,4 @@
-
+&6
 ```c++
   	// for gles2.0
 	EGLConfig   _config;
@@ -254,5 +254,8 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 
 - # eglDestroySurface函数
+
+
+- # eglTerminate函数
 
 
