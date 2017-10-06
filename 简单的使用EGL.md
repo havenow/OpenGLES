@@ -251,7 +251,9 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 ```
 
 - # eglDestroyContex函数
+```
 
+```
 
 - # eglDestroySurface函数
 
