@@ -230,7 +230,7 @@ compatible EGLConfig can be used to render into this surface.
 EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list)函数。
 
 eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurface。任何EGL上下文被创建时带有一个合适的EGLConfig，可以用来
-在渲染到surface。
+渲染到surface。
 
 ```
 
