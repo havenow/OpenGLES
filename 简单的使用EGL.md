@@ -257,6 +257,31 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 - # eglDestroySurface函数
 ```
+An EGLSurface of anytype (window, pbuffer, or pixmap) is destroyed by calling
+EGLBoolean eglDestroySurface(EGLDisplay dpy, EGLSurface surface);
+
+All resources associated with surface which were allocated by EGL are marked for deletion as soon as possible. 
+Following eglDestroySurface, the surface and the handle referring to it are treated in the same fashion as a 
+surface destroyed by eglTerminate (see section 3.2).
+
+Resources associated with surface but not allocated by EGL, such as native windows, native pixmaps, or client API buffers, 
+are not affected when the surface is destroyed. Only storage actually allocated by EGL is marked for deletion.
+
+Furthermore, resources associated with a pbuffer surface are not released until all color buffers of that pbuffer bound to 
+a OpenGL ES texture object have been released.
+
+eglDestroySurface returns EGL_FALSE on failure. An EGL_BAD_SURFACE error is generated if surface is not a valid rendering surface.
+
+调用eglDestroySurface函数销毁一个任何类型的EGLSurface（window, pbuffer, pixmap）;
+
+所有和surface有关的由EGL分配的资源立即被标记为删除。eglDestroySurface之后，surface和指向的handle将以同意的方式被eglTerminate函数销毁。
+
+surface有关的不是由EGL分配的资源，例如native windows, native pixmaps, or client API buffers, 在surface销毁后失效。只有实际上由
+EGL分配的内存被标记为删除。
+
+同时，pbuffer surface相关的资源在所有绑定在OpengGL ES纹理object上的color buffers释放后，才会被释放。
+
+eglDestroySurface调用失败返回EGL_FALSE，如果surface不是一个有效的rendering surface将产生EGL_BAD_SURFACE错误。
 
 ```
 
