@@ -287,6 +287,19 @@ eglDestroySurface调用失败返回EGL_FALSE，如果surface不是一个有效�
 
 - # eglTerminate函数
 ```
+To release resources associated with use of EGL and client APIs on a display, call
+EGLBoolean eglTerminate(EGLDisplay dpy);
 
+Termination marks all EGL-specific resources, such as contexts and surfaces, associated with the specified 
+display for deletion. Handles to all such resources are invalid as soon as eglTerminate returns, but the 
+dpy handle itself remains valid. Passing such handles to any other EGL command will generate EGL_BAD_SURFACE or 
+EGL_BAD_CONTEXT errors. Applications should not try to perform useful work with such resources following eglTerminate; 
+only eglMakeCurrent or eglReleaseThread should be called, to complete deletion of these resources.
+
+调用eglTerminate函数释放display上的EGL和client APIs关联的资源。
+
+结束标记了所有的EGL-specific资源，比如和删除了的display关联的contexts和surfaces。所有资源的handles在eglTerminate返回
+后立即失效，但是dpy handle保持有效。将这个handles传给任何其他EGL命令将产生EGL_BAD_SURFACE或者EGL_BAD_CONTEXT错误。
+应用程序应该不要尝试在eglTerminate后资源是否可以使用；只有eglMakeCurrent和eglReleaseThread应该被调用，用来完全删除这些资源。
 ```
 
