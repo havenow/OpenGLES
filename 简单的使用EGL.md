@@ -252,7 +252,26 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 - # eglDestroyContex函数
 ```
+A rendering context is destroyed by calling 
+EGLBoolean eglDestroyContext(EGLDisplay dpy, EGLContext ctx);
 
+All resources associated with ctx are marked for deletion as soon as possible. When
+multiple contexts share objects (see eglCreateContext), such shared objects are
+not deleted until after all contexts on the share list are destroyed, unless the objects
+are first explicitly deleted by the application. Following eglDestroyContext, the
+context and the handle referring to it are treated in the same fashion as a context
+destroyed by eglTerminate (see section 3.2).
+
+eglDestroyContext returns EGL_FALSE on failure. An EGL_BAD_CONTEXT
+error is generated if ctx is not a valid context.
+
+调用eglDestroyContext函数销毁rendering context。
+
+所有和ctx相关的资源都会被立即标记为删除，当多contexts share objects(查看eglCreateContext)，这些
+share objects在所有share list上的contexts销毁会才会被删除，除非这些objects被应用程序明确的删除。
+eglDestroyContext之后，context和指向的handle被eglTerminate以同样的方式删除。
+
+eglDestroyContext调用失败返回EGL_FALSE，如果ctx不是一个有效的context，将产生EGL_BAD_CONTEXT错误。
 ```
 
 - # eglDestroySurface函数
