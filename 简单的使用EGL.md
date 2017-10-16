@@ -247,7 +247,20 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 - # eglQuerySurface函数
 ```
+To query an attribute associated with an EGLSurface call:
+EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value);
 
+eglQuerySurface returns in value the value of attribute for surface. attribute must
+be set to one of the attributes in table 3.5.
+
+Querying EGL_CONFIG_ID returns the ID of the EGLConfig with respect to
+which the surface was created.
+
+调用eglQuerySurface查询EGLSurface关联的属性。
+
+eglQuerySurface返回surface属性的值，属性必须是表3.5中的一个。
+
+查询EGL_CONFIG_ID返回surface创建的EGLConfig ID。
 ```
 
 - # eglDestroyContex函数
