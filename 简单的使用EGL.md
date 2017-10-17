@@ -242,6 +242,19 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 - # eglMakeCurrent函数
 ```
+To make a context current, call
+EGLBoolean eglMakeCurrent(EGLDisplay dpy, EGLSurface draw, EGLSurface read, EGLContext ctx);
+
+eglMakeCurrent binds ctx to the current rendering thread and to the draw and read surfaces.
+
+For an OpenGL or OpenGL ES context, draw is used for all operations except
+for any pixel data read back or copied, which is taken from the frame buffer values
+of read. Note that the same EGLSurface may be specified for both draw and
+read.
+
+调用eglMakeCurrent生成一个当前context。
+
+eglMakeCurrent绑定ctx到当前渲染线程，并且画和读surfaces。
 
 ```
 
