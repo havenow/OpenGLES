@@ -236,6 +236,17 @@ eglCreateWindowSurface创建一个onscreen EGLSurface同时返回一个EGLSurfac
 
 - # eglCreateContext函数
 ```
+To create a rendering context for the current rendering API, call
+EGLContext eglCreateContext(EGLDisplay dpy, EGLConfig config, EGLContext share_context, const EGLint* attrib_list);
+
+If eglCreateContext succeeds, it initializes the context to the initial state defined for 
+the current rendering API, and returns a handle to it. The context can be
+used to render to any compatible EGLSurface.
+
+调用eglCreateContext为当前rendering API创建一个rendering context。
+
+如果eglCreateContext成功，会为当前rendering API的initial state初始化好context，同时返回一个handle，
+context可以用来渲染任何合适的EGLSurface。
 
 ```
 
