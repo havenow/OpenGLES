@@ -1,4 +1,4 @@
-&6
+
 ```c++
   	// for gles2.0
 	EGLConfig   _config;
