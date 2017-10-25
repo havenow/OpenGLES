@@ -2,6 +2,29 @@ OpenGl中在进行图形变换的时候需要使用几何数学库，这里使�
 github地址：https://github.com/g-truc/glm  
 
 ```
+OpenGL Mathematics (GLM) is a header only C++ mathematics library for graphics software based on the OpenGL Shading Language (GLSL) specifications.
+
+GLM provides classes and functions designed and implemented with the same naming conventions and functionality than GLSL so that anyone who knows GLSL, can use GLM as well in C++.
+
+This project isn't limited to GLSL features. An extension system, based on the GLSL extension conventions, provides extended capabilities: matrix transformations, quaternions, data packing, random numbers, noise, etc...
+
+This library works perfectly with OpenGL but it also ensures interoperability with other third party libraries and SDK. It is a good candidate for software rendering (raytracing / rasterisation), image processing, physic simulations and any development context that requires a simple and convenient mathematics library.
+
+GLM is written in C++98 but can take advantage of C++11 when supported by the compiler. It is a platform independent library with no dependence and it officially supports the following compilers:
+
+Apple Clang 6.0 and higher
+GCC 4.7 and higher
+Intel C++ Composer XE 2013 and higher
+LLVM 3.4 and higher
+Visual C++ 2013 and higher
+CUDA 7.0 and higher (experimental)
+Any C++11 compiler
+For more information about GLM, please have a look at the manual and the API reference documentation. The source code and the documentation are licensed under both the Happy Bunny License (Modified MIT) or the MIT License.
+
+Thanks for contributing to the project by submitting issues for bug reports and feature requests. Any feedback is welcome at glm@g-truc.net.
+```
+
+```
 OpenGL Mathematics (GLM) 是基于OpenGL着色语言（GLSL）规范的图形软件的头文件C ++数学库。
 
 GLM提供的类和函数使用与GLSL相同的命名约定和功能设计和实现，因此任何知道GLSL的人都可以在C ++中使用GLM。
