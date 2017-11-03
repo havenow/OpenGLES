@@ -53,3 +53,8 @@ EGL version 1.5 was voted out of the Khronos Technical Working Group on January 
 and formally approved by the Khronos Board of Promoters on
 March 14, 2014.
 ```
+
+- # vs2015 Community
+URL: https://www.visualstudio.com/downloads/download-visual-studio-vs  
+
+Visual Studio 2015 Community ISO 文件实际的下载地址为：http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs2015.com_enu.iso
