@@ -54,8 +54,9 @@ and formally approved by the Khronos Board of Promoters on
 March 14, 2014.
 ```
 
-- # vs2015 Community
-URL:   
+- # vs2015 Community  
+vs2015社区版，功能全但是不能是商业用途。  
+URL:   
 https://www.visualstudio.com/downloads/download-visual-studio-vs  
 
 Visual Studio 2015 Community ISO 文件实际的下载地址为：  
