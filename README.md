@@ -60,4 +60,6 @@ URL:  
 https://www.visualstudio.com/downloads/download-visual-studio-vs  
 
 Visual Studio 2015 Community ISO 文件实际的下载地址为：  
-http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs2015.com_enu.iso
+http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs2015.com_enu.iso  
+
+新建项目（控制台应用程序）时，新建空项目，就不会生成一些和windows平台相关的代码，更利于跨平台的开发。
