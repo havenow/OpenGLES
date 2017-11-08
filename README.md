@@ -54,6 +54,19 @@ and formally approved by the Khronos Board of Promoters on
 March 14, 2014.
 ```
 
+- # xp系统中，opengl es2.0 映射非2^n宽高的纹理  
+在绑定纹理后，添加下面四行代码  
+```c++
+		unsigned    textureId   =   0;
+		glGenTextures( 1, &textureId );
+		glBindTexture( GL_TEXTURE_2D, textureId );
+    
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//用边缘的像素填充
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+```
+
 - # vs2015 Community  
 vs2015社区版，功能全但是不能是商业用途。  
 URL:   
@@ -63,3 +76,4 @@ Visual Studio 2015 Community ISO 文件实际的下载地址为：
 http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs2015.com_enu.iso  
 
 新建项目（控制台应用程序）时，新建空项目，就不会生成一些和windows平台相关的代码，更利于跨平台的开发。
+
