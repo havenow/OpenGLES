@@ -54,8 +54,10 @@ and formally approved by the Khronos Board of Promoters on
 March 14, 2014.
 ```
 
-- # xp系统中，opengl es2.0 映射非2^n宽高的纹理  
-在绑定纹理后，添加下面四行代码  
+- # 老显卡，opengl es2.0 映射非2^n宽高的纹理  
+部分xp win7系统用户游戏没有画面，后来发现是显卡太老，不支持不规则纹理     
+解决方案：    
+在绑定纹理后，添加下面四行代码  
 ```c++
 		unsigned    textureId   =   0;
 		glGenTextures( 1, &textureId );
