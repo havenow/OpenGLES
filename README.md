@@ -104,3 +104,6 @@ dump文件是附加堆栈信息的存储文件的简称，文件扩展名是”.
 通过堆栈定位问题函数  
 通过代码定位问题函数具体代码位置  
 
+- # FreeType    
+https://www.freetype.org/freetype2/docs/tutorial/step2.html#section-1  
+
