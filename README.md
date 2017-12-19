@@ -69,6 +69,37 @@ March 14, 2014.
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 ```
 
+- # win7用户无画面  
+代码问题：  
+```c++
+            const EGLint attribs[] =
+            {
+                EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
+                EGL_BLUE_SIZE, 8,
+                EGL_GREEN_SIZE, 8,
+                EGL_RED_SIZE, 8,
+                EGL_DEPTH_SIZE,24,
+                EGL_NONE
+            };
+            EGLint 	format(0);
+            EGLint	numConfigs(0);
+            EGLint  major;
+            EGLint  minor;
+	    
+      bool bRet = eglInitialize(_display, &major, &minor);//返回false
+      EGLint nErr = eglGetError();//返回12289 --> 0x3001
+      错误号0x3001: EGL_NOT_INITIALIZED  EGL is not or could not be inititialized, for the specified display
+      将EGL_DEPTH_SIZE改为 16 8返回一样错误号
+```
+
+查看设备管理器：     
+
+![](https://github.com/havenow/OpenGLES/blob/master/win7%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E6%9C%AA%E5%AE%89%E8%A3%85%E6%AD%A3%E7%A1%AE.jpg)
+
+显卡驱动未安装好，用ghost安装的系统，显卡驱动会安装不正确，显卡驱动安装成功，是可以查看到显卡厂商的。  
+下载一个驱动精灵，安装好显卡驱动就Ok了。  
+
+
 - # vs2015 Community  
 vs2015社区版，功能全但是不能是商业用途。  
 URL:   
