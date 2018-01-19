@@ -136,6 +136,9 @@ dump文件是附加堆栈信息的存储文件的简称，文件扩展名是”.
 通过堆栈定位问题函数  
 通过代码定位问题函数具体代码位置  
 
+- #　VS远程调试 附加到进程   
+Visual Studio 远程调试----使用自带工具+附加进程    
+
 - # FreeType    
 https://www.freetype.org/freetype2/docs/tutorial/step2.html#section-1  
 
