@@ -97,7 +97,7 @@ March 14, 2014.
 ![](https://github.com/havenow/OpenGLES/blob/master/win7%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E6%9C%AA%E5%AE%89%E8%A3%85%E6%AD%A3%E7%A1%AE.jpg)
 
 显卡驱动未安装好，用ghost安装的系统，显卡驱动会安装不正确，显卡驱动安装成功，是可以查看到显卡厂商的。  
-下载一个驱动精灵，安装好显卡驱动就Ok了。  
+下载一个驱动精灵，安装好显卡驱动就可以了。  
 
 
 - # vs2015 Community  
