@@ -144,3 +144,18 @@ Visual Studio 远程调试
 - # FreeType    
 https://www.freetype.org/freetype2/docs/tutorial/step2.html#section-1  
 
+
+- # VLD的配置文件
+使用 cef时，调用CefShutdown();会导致内存泄漏信息不会输出？？
+
+配置文件在安装目录下(vld.ini)，修改配置文件将会影响所有使用到 VLD 的工程。另外一种做法。将 vld.ini 复制到你的工程目录下(Visual Studio C++工程Debug目录)，然后修改，只会影响你的所在工程配置。
+
+vld.ini 配置有几个选项，我只说一下我感觉很有用的：
+
+- VLD：选择VLD的打开与关闭。在Debug模式下运行，关闭以后会有一行VLD关闭的提示信息。默认为 on。		
+- AggregateDuplicates：这个非常有用，设置为 yes 时，相同地方产生内存泄漏只输出一次，但是会统计发生的次数。默认是 no 。		
+- MaxDataDump：输出的dump数据个数，默认为 256。		
+- MaxTraceFrames：官方文档解释的非常复杂，我的理解就是输出的调用栈的层数。默认是 64。		
+- ReportEncoding ：report 文件的编码格式，可选有 ascii, unicode，默认是 ascii 。		
+- ReportFile ：report 文件的路径。默认是 “.\memory_leak_report.txt”		
+- ReportTo ：这个也是一个很有用的参数，可选有 debugger, file, both，debugger 表示输出到 debug模式下的输出窗口；file 表示只输出到文件中； both顾名思义，全都都输出。默认是 debugger 。具体用那个参数，看你的内存泄漏出现的多少了，自己衡量吧。		
