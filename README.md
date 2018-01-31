@@ -146,7 +146,7 @@ https://www.freetype.org/freetype2/docs/tutorial/step2.html#section-1
 
 
 - # VLD的配置文件
-使用 cef时，调用CefShutdown();会导致内存泄漏信息不会输出？？
+使用cef时，调用CefShutdown();会导致内存泄漏信息不会输出？？
 
 配置文件在安装目录下(vld.ini)，修改配置文件将会影响所有使用到 VLD 的工程。另外一种做法。将 vld.ini 复制到你的工程目录下(Visual Studio C++工程Debug目录)，然后修改，只会影响你的所在工程配置。
 
