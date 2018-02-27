@@ -1,4 +1,5 @@
-OpenGl中在进行图形变换的时候需要使用几何数学库，可以使用第三方数学库GLM。  
+OpenGl中在进行图形变换的时候需要使用几何数学库，可以使用第三方数学库GLM。      
+
 github地址：https://github.com/g-truc/glm  
 
 ```
