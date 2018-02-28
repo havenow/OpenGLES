@@ -26,22 +26,22 @@ Thanks for contributing to the project by submitting issues for bug reports and 
 ```
 
 ```
-OpenGL Mathematics (GLM) 是基于OpenGL着色语言（GLSL）规范的图形软件的头文件C ++数学库。
+OpenGL Mathematics (GLM) 是基于OpenGL着色语言（GLSL）规范的图形软件的头文件C++ 数学库。
 
-GLM提供的类和函数使用与GLSL相同的命名约定和功能设计和实现，因此任何知道GLSL的人都可以在C ++中使用GLM。
+GLM提供的类和函数使用与GLSL相同的命名约定和功能设计和实现，因此任何知道GLSL的人都可以在C++ 中使用GLM。
 
 这个项目不限于GLSL的功能。基于GLSL扩展约定的扩展系统提供扩展能力：矩阵变换，四元数，数据打包，随机数，噪声等等。
 
 这个库与OpenGL完美地工作，但它也确保与其他第三方库和SDK的互操作性。它是软件渲染（光线追踪/光栅化），图像处理，物理模拟和任何需要简单方便的数学库的开发上下文的良好候选。
 
-GLM是用C ++ 98编写的，但是当编译器支持时可以利用C ++ 11。它是一个没有依赖的平台独立库，它正式支持以下编译器：
+GLM是用C++ 98编写的，但是当编译器支持时可以利用C++ 11。它是一个没有依赖的平台独立库，它正式支持以下编译器：
     ● 苹果Clang 6.0及更高版本
     ● GCC 4.7及以上
-    ● 英特尔C ++ Composer XE 2013及更高版本
+    ● 英特尔C++ Composer XE 2013及更高版本
     ● LLVM 3.4及更高版本
-    ● Visual C ++ 2013及更高版本
+    ● Visual C++ 2013及更高版本
     ● CUDA 7.0及更高版本（实验版）
-    ● 任何C ++ 11编译器
+    ● 任何C++ 11编译器
 
 有关GLM的更多信息，请查看手册和API参考文档。 源代码和文档根据Happy Bunny License (Modified MIT)或MIT许可证授权。
 
