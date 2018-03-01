@@ -11,7 +11,7 @@ This project isn't limited to GLSL features. An extension system, based on the G
 
 This library works perfectly with OpenGL but it also ensures interoperability with other third party libraries and SDK. It is a good candidate for software rendering (raytracing / rasterisation), image processing, physic simulations and any development context that requires a simple and convenient mathematics library.
 
-GLM is written in C++98 but can take advantage of C++11 when supported by the compiler. It is a platform independent library with no dependence and it officially supports the following compilers:
+GLM is written in C++ 98 but can take advantage of C++ 11 when supported by the compiler. It is a platform independent library with no dependence and it officially supports the following compilers:
 
 Apple Clang 6.0 and higher
 GCC 4.7 and higher
@@ -26,9 +26,9 @@ Thanks for contributing to the project by submitting issues for bug reports and 
 ```
 
 ```
-OpenGL Mathematics (GLM) 是基于OpenGL着色语言（GLSL）规范的图形软件的头文件C++ 数学库。
+OpenGL Mathematics (GLM) 是基于OpenGL着色语言（GLSL）规范的图形软件的头文件C++数学库。
 
-GLM提供的类和函数使用与GLSL相同的命名约定和功能设计和实现，因此任何知道GLSL的人都可以在C++ 中使用GLM。
+GLM提供的类和函数使用与GLSL相同的命名约定和功能设计和实现，因此任何知道GLSL的人都可以在C++中使用GLM。
 
 这个项目不限于GLSL的功能。基于GLSL扩展约定的扩展系统提供扩展能力：矩阵变换，四元数，数据打包，随机数，噪声等等。
 
