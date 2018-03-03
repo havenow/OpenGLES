@@ -74,7 +74,9 @@ glm::mat4 camera(float Translate, glm::vec2 const & Rotate)
 GLuint positionLocation, modelMatrixLocation, viewMatrixLocation, projectionMatrixLocation;
 glm::mat4 modelMatrix, viewMatrix, projectionMatrix;
 
+{
 	glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, glm::value_ptr(modelMatrix));
 	glUniformMatrix4fv(viewMatrixLocation, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 	glUniformMatrix4fv(projectionMatrixLocation, 1, GL_FALSE, glm::value_ptr(projectionMatrix));
+}
 ```
