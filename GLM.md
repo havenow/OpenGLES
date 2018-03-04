@@ -69,7 +69,7 @@ glm::mat4 camera(float Translate, glm::vec2 const & Rotate)
 ```
 
 ```c++
-使用案例2:
+使用案例:
 
 GLuint positionLocation, modelMatrixLocation, viewMatrixLocation, projectionMatrixLocation;
 glm::mat4 modelMatrix, viewMatrix, projectionMatrix;
