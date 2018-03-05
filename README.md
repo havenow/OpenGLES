@@ -165,3 +165,8 @@ vld.ini 配置有几个选项，我只说一下我感觉很有用的：
 - ReportEncoding ：report 文件的编码格式，可选有 ascii, unicode，默认是 ascii 。		
 - ReportFile ：report 文件的路径。默认是 “.\memory_leak_report.txt”		
 - ReportTo ：这个也是一个很有用的参数，可选有 debugger, file, both，debugger 表示输出到 debug模式下的输出窗口；file 表示只输出到文件中； both顾名思义，全都都输出。默认是 debugger 。具体用那个参数，看你的内存泄漏出现的多少了，自己衡量吧。		
+
+- #  glew库  
+支持opengl4.3的glew库glew-1.9.0-win32.zip    
+截止2012年8月7日，Khronos Group公布了最新的OpenGL 4.3规范。glew-1.9.0-win32.zip支持OpenGL4.3     
+http://sourceforge.net/projects/glew/
