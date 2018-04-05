@@ -10,7 +10,7 @@ win7: d3dcompiler_46.dll/d3dcompiler_47.dll
 EGL version 1.0, approved on July 23, 2003, is the original version of EGL. EGL
 was loosely based on GLX 1.3, generalized to be implementable on many different 
 operating systems and window systems and simplified to reflect the needs of
-embedded devices running OpenGL ES .
+embedded devices running OpenGL ES.
 ```
 
 - # Version 1.1
