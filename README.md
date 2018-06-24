@@ -170,3 +170,52 @@ vld.ini 配置有几个选项，我只说一下我感觉很有用的：
 支持opengl4.3的glew库glew-1.9.0-win32.zip    
 截止2012年8月7日，Khronos Group公布了最新的OpenGL 4.3规范。glew-1.9.0-win32.zip支持OpenGL4.3     
 http://sourceforge.net/projects/glew/
+
+- #  OpenGL相关信息的获取  
+下面代码在Windows下面实现的。     
+```c++
+		GLenum err = glewInit();
+		if (err != GLEW_OK)
+		{
+			printf("glewInit error: %s\n", glewGetErrorString(err));
+		}
+
+		const char* szVendorName = reinterpret_cast<const char*>(glGetString(GL_VENDOR));//返回负责当前OpenGL实现厂商的名字  
+		const char* szRenderer = reinterpret_cast<const char*>(glGetString(GL_RENDERER));//返回一个渲染器标识符，通常是个硬件平台  
+		const char* szOpenGLVersion = reinterpret_cast<const char*>(glGetString(GL_VERSION)); //返回当前OpenGL实现的版本号 
+		const char* szExtString = reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS));
+
+		int nNumOfExt;
+		glGetIntegerv(GL_NUM_EXTENSIONS, &nNumOfExt);
+		for (int i = 0; i < nNumOfExt; i++)
+		{
+			const GLubyte *ext = glGetStringi(GL_EXTENSIONS, i);
+			printf("%s\n", ext);
+		}
+
+		bool isSupport = glewIsSupported("GL_EXT_framebuffer_object");  //是否支持帧缓冲
+		isSupport = glewIsSupported("GL_VERSION_2_0");
+
+		if (GLEW_ARB_vertex_shader && GLEW_ARB_fragment_shader)
+			printf("Ready for GLSL: GLEW_ARB_vertex_shader GLEW_ARB_fragment_shader\n");
+
+		printf(
+			"OpenGL Version		GLSL Version\n"
+			"	2.0                  110\n"
+			"	2.1                  120\n"
+			"	3.0                  130\n"
+			"	3.1                  140\n"
+			"	3.2                  150\n"
+			"	3.3                  330\n"
+			"	4.0                  400\n"
+			"	4.1                  410\n"
+			"	4.2                  420\n"
+			"	4.3                  430\n"
+			"\n"
+			"\n"
+			"OpenGL ES Version	GLSL ES Version\n"
+			"	2.0                  100\n"
+			"	3.0                  300\n");
+```
+
+
